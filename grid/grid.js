@@ -99,7 +99,7 @@ export default class Grid {
         return neighbourArrWithValues
     }
 
-    nextInCol(rowOrObj, colOrUndefined){
+    nextInRow(rowOrObj, colOrUndefined){
         const args = this.destructAugs(rowOrObj, colOrUndefined);
         if (!args) return undefined;
         const { row, col } = args;
@@ -118,5 +118,58 @@ export default class Grid {
         if (row +1 >= this.rows) return undefined
         return this.get({row: row +1, col: col})
     }
+
+    north(rowOrObj, colOrUndefined){
+        const args = this.destructAugs(rowOrObj, colOrUndefined);
+        if (!args) return undefined;
+        const { row, col } = args;
+
+        if (row - 1 < 0) return undefined
+        else return this.get({row: row-1, col: col})
+    }
+
+    south(rowOrObj, colOrUndefined){
+        const args = this.destructAugs(rowOrObj, colOrUndefined);
+        if (!args) return undefined;
+        const { row, col } = args;
+
+        if (row +1 >= this.rows) return undefined
+        else return this.get({row: row+1, col: col})
+    }
+
+    west(rowOrObj, colOrUndefined){
+        const args = this.destructAugs(rowOrObj, colOrUndefined);
+        if (!args) return undefined;
+        const { row, col } = args;
+
+        if (col -1 > 0) return undefined
+        else return this.get({row: row, col: col-1})
+    }
+
+    east(rowOrObj, colOrUndefined){
+        const args = this.destructAugs(rowOrObj, colOrUndefined);
+        if (!args) return undefined;
+        const { row, col } = args;
+
+        if (col +1 >= this.cols) return undefined
+        else return this.get({row: row, col: col+1})
+    }
+
+    getRows(){
+        return this.rows
+    }
+
+    getCols(){
+        return this.cols
+    }
+
+    size(){
+        return (this.rows * this.cols) 
+    }
+
+    fill(value){
+        this.data.forEach( arr => arr.fill(value))
+    }
+
 
 }

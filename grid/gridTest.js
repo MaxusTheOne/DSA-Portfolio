@@ -19,14 +19,14 @@ console.log(grid.dump());
 
 
 console.log(grid.neighbourValues(1, 1)); // [ 'B', null, null, null ]
-// console.log(grid.nextInRow(0, 1)); // { row: 0, col: 2, value: 'C' }
-console.log(grid.nextInCol(0, 1)); // { row: 1, col: 1, value: C }
-// console.log(grid.north(1, 1)); // { row: 0, col: 1, value: 'B' }
-// console.log(grid.south(1, 1)); // { row: 2, col: 1, value: null }
-// console.log(grid.west(1, 1)); // { row: 1, col: 0, value: null }
-// console.log(grid.east(1, 1)); // { row: 1, col: 2, value: null }
-// console.log(grid.rows()); // 3
-// console.log(grid.cols()); // 3
-// console.log(grid.size()); // 9
-// grid.fill('X');
-// console.log(grid.get(0, 0)); // 'X'
+console.log(grid.nextInRow(0, 1)); // { row: 1, col: 1, value: 'C' }
+console.log(grid.nextInCol(0, 1)); // { row: 0, col: 2, value: C }
+console.log(grid.north(1, 1)); // { row: 0, col: 1, value: 'B' }
+console.log(grid.south(1, 1)); // { row: 2, col: 1, value: null }
+console.log(grid.west(1, 1)); // { row: 1, col: 0, value: null }
+console.log(grid.east(1, 1)); // { row: 1, col: 2, value: null }
+console.log(grid.getRows()); // 3
+console.log(grid.getCols()); // 3
+console.log(grid.size()); // 9
+grid.fill('X');
+console.log(grid.get(0, 0)); // 'X'
