@@ -1,4 +1,4 @@
-function RpnCalculator(arr) {
+export default function rpnCalculator(arr) {
     const calcStack = [];
  
     while (arr.length > 0) {

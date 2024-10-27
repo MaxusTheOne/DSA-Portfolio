@@ -1,6 +1,6 @@
-import Queue from "./queue.js";
-import rpnCalculator from "./rnpcalculator.js";
-import Stack from "./stack.js";
+import Queue from "../queue/queue.js";
+import rpnCalculator from "./rpnCalculator.js";
+import Stack from "../stack/stack.js";
 
 function infixToPostFix(expression) {
     const inputQueue = new Queue();
@@ -62,3 +62,5 @@ function finalCalc(expression) {
 
 window.infixToPostFix = infixToPostFix;
 window.finalCalc = finalCalc;
+
+finalCalc("3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3"); // 3
